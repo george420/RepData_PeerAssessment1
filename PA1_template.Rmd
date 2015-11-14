@@ -72,7 +72,7 @@ median_steps_imputed <- as.integer(median(date_steps_imputed$steps))
 Both the mean and median total number of steps taken per day are `r mean_steps_imputed`. Due to the imputation, the former remains the same while the latter changes slightly.
 
 ## Are there differences in activity patterns between weekdays and weekends?
-
+The difference of the patterns between weekdays and weekends is shown as follows
 ```{r}
 activity$date <- as.Date(activity$date)
 activity$day <- weekdays(activity$date)
@@ -95,3 +95,5 @@ g <- g + facet_grid(day_type ~ .)
 g <- g + labs(title = "Differences in activity patterns between weekdays and weekends", x = "Interval", y = "Average number of steps")
 g
 ```
+
+The figure above shows the individual is the most activie between 7:30 a.m. and 9:30 a.m. on weekdays and is active almost all time between 7:30 a.m. and 8:00 p.m. on the weekend.
